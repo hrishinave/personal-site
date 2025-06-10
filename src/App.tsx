@@ -127,7 +127,7 @@ function App() {
             <Linkedin className="w-5 h-5" />
           </a>
         </div>
-        <p>2024—∞ &nbsp; Built by Hrishikesh Naveenam</p>
+        <p>2025—∞ &nbsp; Built by Hrishikesh Naveenam</p>
       </footer>
     </div>
   );
