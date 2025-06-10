@@ -8,10 +8,8 @@ import { Textarea } from './components/ui/textarea'
 import { Github, ExternalLink, Mail, Linkedin } from 'lucide-react'
 
 function App() {
-  const [darkMode, setDarkMode] = React.useState(true)
-  const toggleTheme = () => setDarkMode(!darkMode)
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div className="dark">
       <div className="min-h-screen bg-background text-foreground transition-colors">
         <nav className="fixed top-0 left-0 right-0 bg-background/70 backdrop-blur border-b border-border z-50">
           <div className="max-w-screen-lg mx-auto flex items-center justify-between p-4">
@@ -21,16 +19,13 @@ function App() {
               <a href="#experience" className="hover:text-blue-400">Experience</a>
               <a href="#about" className="hover:text-blue-400">About</a>
               <a href="#contact" className="hover:text-blue-400">Contact</a>
-              <button onClick={toggleTheme} className="border px-2 rounded">
-                {darkMode ? 'Light' : 'Dark'}
-              </button>
             </div>
           </div>
         </nav>
       {/* Hero Section */}
       <motion.section
         id="hero"
-        className="max-w-screen-lg mx-auto px-6 md:px-12 py-20 bg-gradient-to-br from-blue-200 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+        className="max-w-screen-lg mx-auto px-6 md:px-12 py-20"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -72,7 +67,7 @@ function App() {
           {/* Project Card 1 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
             <Card className="bg-gray-950 border-gray-800">
-              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <img src="/celestai-poster.png" alt="Project" className="rounded-t-2xl" />
               <CardHeader>
               <CardTitle className="text-lg text-white">GAN-Based Anomaly Detection</CardTitle>
               <CardDescription className="text-gray-400">
@@ -242,7 +237,7 @@ function App() {
           {/* Project Card 6 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
             <Card className="bg-gray-950 border-gray-800">
-              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <img src="https://i.imgur.com/1234567890.png" alt="Project" className="rounded-t-2xl" />
               <CardHeader>
               <CardTitle className="text-lg text-white">Data Analytics Platform</CardTitle>
               <CardDescription className="text-gray-400">
