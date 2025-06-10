@@ -41,18 +41,23 @@ function App() {
             I'm currently a Computer Science Student @ UT Dallas and a Research Assistant @ the ANRL Lab headed by Dr. Jason Jue.
           </p>
 
-          <div className="flex gap-4">
-            <Button size="lg" className="rounded-2xl" asChild>
-              <a href="#contact">
-                <Mail className="w-4 h-4 mr-2" />
-                Contact Me
+          <div className="flex flex-col gap-4">
+            <p className="text-sm md:text-base text-gray-400">
+              Feel free to contact me at{' '}
+              <a 
+                href="mailto:hrishinave@gmail.com" 
+                className="text-blue-400 hover:text-blue-300 underline font-medium"
+              >
+                hrishinave@gmail.com
               </a>
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-2xl" asChild>
-              <a href="/resume%20june25.pdf" target="_blank" rel="noopener noreferrer">
-                View Resume
-              </a>
-            </Button>
+            </p>
+            <div>
+              <Button size="lg" variant="outline" className="rounded-2xl" asChild>
+                <a href="/resume%20june25.pdf" target="_blank" rel="noopener noreferrer">
+                  View Resume
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </motion.section>
