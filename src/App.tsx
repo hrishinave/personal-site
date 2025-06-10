@@ -10,8 +10,8 @@ import { Github, ExternalLink, Mail, Linkedin } from 'lucide-react'
 function App() {
   return (
     <div className="dark">
-      <div className="min-h-screen bg-background text-foreground transition-colors">
-        <nav className="fixed top-0 left-0 right-0 bg-background/70 backdrop-blur border-b border-border z-50">
+      <div className="min-h-screen bg-gray-900 text-foreground transition-colors">
+        <nav className="fixed top-0 left-0 right-0 bg-gray-900/70 backdrop-blur border-b border-gray-700 z-50">
           <div className="max-w-screen-lg mx-auto flex items-center justify-between p-4">
             <span className="font-display text-lg font-bold">HN</span>
             <div className="flex items-center gap-4 text-sm">
@@ -35,7 +35,7 @@ function App() {
             <span className="text-base font-medium text-gray-500">👋</span>
           </div>
           <h1 className="text-lg md:text-2xl font-display font-medium mb-4">
-            Hi, I'm <span className="text-blue-400">Hrishikesh</span>—a developer, researcher, and ML enthusiast.
+            Hi, I'm <span className="animate-rainbow bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">Hrishikesh</span>—a developer, researcher, and ML enthusiast.
           </h1>
           <p className="text-sm md:text-base text-gray-400 mb-6 max-w-xl">
             I'm currently a Computer Science Student @ UT Dallas and a Research Assistant @ the ANRL Lab headed by Dr. Jason Jue.
@@ -49,7 +49,7 @@ function App() {
               </a>
             </Button>
             <Button size="lg" variant="outline" className="rounded-2xl" asChild>
-              <a href="/resume-june25.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/resume%20june25.pdf" target="_blank" rel="noopener noreferrer">
                 View Resume
               </a>
             </Button>
@@ -70,8 +70,9 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Project Card 1 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
-            <Card className="bg-gray-950 border-gray-800">
+            <Card className="bg-gray-800 border-gray-700">
               <img src="/celestai-poster.png" alt="Project" className="rounded-t-2xl" />
+              
               <CardHeader>
               <CardTitle className="text-lg text-white">GAN-Based Anomaly Detection</CardTitle>
               <CardDescription className="text-gray-400">
@@ -84,9 +85,11 @@ function App() {
                   <Github className="w-4 h-4 mr-2" />
                   GitHub
                 </Button>
-                <Button size="sm" variant="outline">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Paper
+                <Button size="sm" variant="outline" asChild>
+                  <a href="/celestai-poster.png" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Paper
+                  </a>
                 </Button>
               </div>
             </CardContent>
@@ -95,7 +98,7 @@ function App() {
 
           {/* Project Card 2 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
-            <Card className="bg-gray-950 border-gray-800">
+            <Card className="bg-gray-800 border-gray-700">
               <img src="netgainnba-poster.png" alt="Project" className="rounded-t-2xl" />
               <CardHeader>
               <CardTitle className="text-lg text-white">NetGain NBA</CardTitle>
@@ -122,7 +125,7 @@ function App() {
 
           {/* Project Card 3 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
-            <Card className="bg-gray-950 border-gray-800">
+            <Card className="bg-gray-800 border-gray-700">
               <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
               <CardHeader>
               <CardTitle className="text-lg text-white">Edge Computing Optimizer</CardTitle>
@@ -156,7 +159,7 @@ function App() {
 
           {/* Project Card 4 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
-            <Card className="bg-gray-950 border-gray-800">
+            <Card className="bg-gray-800 border-gray-700">
               <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
               <CardHeader>
               <CardTitle className="text-lg text-white">Portfolio Website</CardTitle>
@@ -190,7 +193,7 @@ function App() {
 
           {/* Project Card 5 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
-            <Card className="bg-gray-950 border-gray-800">
+            <Card className="bg-gray-800 border-gray-700">
               <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
               <CardHeader>
               <CardTitle className="text-lg text-white">Deep Learning Research</CardTitle>
@@ -224,7 +227,7 @@ function App() {
 
           {/* Project Card 6 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
-            <Card className="bg-gray-950 border-gray-800">
+            <Card className="bg-gray-800 border-gray-700">
               <img src="https://i.imgur.com/1234567890.png" alt="Project" className="rounded-t-2xl" />
               <CardHeader>
               <CardTitle className="text-lg text-white">Data Analytics Platform</CardTitle>
@@ -259,7 +262,7 @@ function App() {
       </motion.section>
 
       {/* Section Divider */}
-      <hr className="max-w-screen-lg mx-auto border-gray-800" />
+      <hr className="max-w-screen-lg mx-auto border-gray-700" />
 
       {/* Experience Section */}
       <motion.section
@@ -273,7 +276,8 @@ function App() {
         <h2 className="text-4xl font-display font-bold mb-12">Experience</h2>
         <div className="space-y-8">
           {/* Experience Item 3 */}
-          <Card className="shadow-lg bg-gray-950 border-gray-800">
+          <Card className="shadow-lg bg-gray-800 border-gray-700">
+            
             <CardHeader>
               <CardTitle className="text-white">Researcher</CardTitle>
               <CardDescription className="text-gray-400">ACM UT Dallas • Spring 2025</CardDescription>
@@ -289,7 +293,7 @@ function App() {
           </Card>
 
           {/* Experience Item 1 */}
-          <Card className="shadow-lg bg-gray-950 border-gray-800">
+          <Card className="shadow-lg bg-gray-800 border-gray-700">
             <CardHeader>
               <CardTitle className="text-white">ML Engineer</CardTitle>
               <CardDescription className="text-gray-400">AIS UT Dallas • Spring 2025</CardDescription>
@@ -304,7 +308,7 @@ function App() {
           </Card>
 
           {/* Experience Item 2 */}
-          <Card className="shadow-lg bg-gray-950 border-gray-800">
+          <Card className="shadow-lg bg-gray-800 border-gray-700">
             <CardHeader>
               <CardTitle className="text-white">Research Assistant</CardTitle>
               <CardDescription className="text-gray-400">VIMAN Lab @ Univ of Missouri • Aug 2023 - Feb 2024</CardDescription>
@@ -322,7 +326,7 @@ function App() {
       </motion.section>
 
       {/* Section Divider */}
-      <hr className="max-w-screen-lg mx-auto border-gray-800" />
+      <hr className="max-w-screen-lg mx-auto border-gray-700" />
 
       {/* About Section */}
       <motion.section
@@ -334,7 +338,7 @@ function App() {
         viewport={{ once: true }}
       >
         <h2 className="text-4xl font-display font-bold mb-12">About</h2>
-        <Card className="shadow-lg bg-gray-950 border-gray-800">
+        <Card className="shadow-lg bg-gray-800 border-gray-700">
           <CardContent className="p-8">
             <p className="text-gray-400 leading-relaxed">
               I'm a passionate Computer Science student at UT Dallas with a deep focus on machine learning (specifically reinforcement learning!). 
@@ -349,7 +353,7 @@ function App() {
       </motion.section>
 
       {/* Section Divider */}
-      <hr className="max-w-screen-lg mx-auto border-gray-800" />
+      <hr className="max-w-screen-lg mx-auto border-gray-700" />
 
       {/* Contact Section */}
       <motion.section
@@ -366,20 +370,20 @@ function App() {
         </p>
         
         <div className="max-w-2xl">
-          <Card className="shadow-lg bg-gray-950 border-gray-800">
+          <Card className="shadow-lg bg-gray-800 border-gray-700">
             <CardContent className="p-8">
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-2">Name *</label>
-                  <Input placeholder="Your name" className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 rounded-3xl px-4 py-3" />
+                  <Input placeholder="Your name" className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-500 rounded-3xl px-4 py-3" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-2">Email *</label>
-                  <Input type="email" placeholder="Your email" className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 rounded-3xl px-4 py-3" />
+                  <Input type="email" placeholder="Your email" className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-500 rounded-3xl px-4 py-3" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-2">Message *</label>
-                  <Textarea placeholder="Your message" rows={5} className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 rounded-3xl px-4 py-3" />
+                  <Textarea placeholder="Your message" rows={5} className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-500 rounded-3xl px-4 py-3" />
                 </div>
                 <Button className="w-full rounded-3xl font-semibold" size="lg">
                   Send
@@ -391,13 +395,13 @@ function App() {
 
         {/* Social Links */}
         <div className="flex gap-4 mt-12">
-          <Button variant="outline" size="lg" className="rounded-2xl border-gray-700 text-gray-400 hover:text-black hover:border-gray-600" asChild>
+          <Button variant="outline" size="lg" className="rounded-2xl border-gray-600 text-gray-400 hover:text-black hover:border-gray-500" asChild>
             <a href='https://github.com/hrishinave' target='_blank' rel='noopener noreferrer'>
               <Github className="w-4 h-4 mr-2" />
               GitHub
             </a>
           </Button>
-          <Button variant="outline" size="lg" className="rounded-2xl border-gray-700 text-gray-400 hover:text-black hover:border-gray-600" asChild>
+          <Button variant="outline" size="lg" className="rounded-2xl border-gray-600 text-gray-400 hover:text-black hover:border-gray-500" asChild>
             <a href='https://www.linkedin.com/in/hrishikeshnaveenam/' target='_blank' rel='noopener noreferrer'>
               <Linkedin className="w-4 h-4 mr-2" />
               LinkedIn
@@ -408,7 +412,7 @@ function App() {
       </motion.section>
 
       {/* Footer */}
-      <footer className="max-w-screen-lg mx-auto px-6 md:px-12 py-8 border-t border-gray-800">
+      <footer className="max-w-screen-lg mx-auto px-6 md:px-12 py-8 border-t border-gray-700">
         <div className="text-center text-gray-500">
           <p>Hrishikesh Naveenam © 2025</p>
         </div>
