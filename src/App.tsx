@@ -32,7 +32,7 @@ function App() {
       >
         <div className="text-left">
           <div className="mb-4">
-            <span className="text-base font-medium text-gray-500">👋</span>
+            <img src="/my-genmoji.png" alt="Hrishikesh Genmoji" className="w-16 h-16 inline-block" />
           </div>
           <h1 className="text-lg md:text-2xl font-display font-medium mb-4">
             Hi, I'm <span className="animate-rainbow bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">Hrishikesh</span>—a developer, researcher, and ML enthusiast.
@@ -71,7 +71,7 @@ function App() {
           {/* Project Card 1 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
             <Card className="bg-gray-800 border-gray-700">
-              <img src="/celestai-poster.png" alt="Project" className="rounded-t-2xl" />
+              <img src="/celestai-poster.png" alt="Project" className="rounded-t-2xl h-48 w-full object-cover" />
               
               <CardHeader>
               <CardTitle className="text-lg text-white">GAN-Based Anomaly Detection</CardTitle>
@@ -99,7 +99,7 @@ function App() {
           {/* Project Card 2 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
             <Card className="bg-gray-800 border-gray-700">
-              <img src="netgainnba-poster.png" alt="Project" className="rounded-t-2xl" />
+              <img src="netgainnba-poster.png" alt="Project" className="rounded-t-2xl h-48 w-full object-cover" />
               <CardHeader>
               <CardTitle className="text-lg text-white">NetGain NBA</CardTitle>
               <CardDescription className="text-gray-400">
@@ -109,10 +109,11 @@ function App() {
             <CardContent>
         
               <div className="flex gap-2">
-                <Button size="sm" variant="outline">
+                <Button size="sm" variant="outline" asChild>
+                  <a href="https://github.com/Sarvesh30/NetGainNBA" target="_blank" rel="noopener noreferrer">
                   <Github className="w-4 h-4 mr-2" />
-                  <a href="https://github.com/Sarvesh30/NetGainNBA" target="_blank" rel="noopener noreferrer"></a>
                   GitHub
+                  </a>
                 </Button>
                 <Button size="sm" variant="outline">
                   <ExternalLink className="w-4 h-4 mr-2" />
@@ -126,7 +127,7 @@ function App() {
           {/* Project Card 3 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
             <Card className="bg-gray-800 border-gray-700">
-              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl h-48 w-full object-cover" />
               <CardHeader>
               <CardTitle className="text-lg text-white">Edge Computing Optimizer</CardTitle>
               <CardDescription className="text-gray-400">
@@ -134,15 +135,6 @@ function App() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary">Python</Badge>
-                <Badge variant="secondary">K-means</Badge>
-                <Badge variant="secondary">Edge Computing</Badge>
-                <Badge variant="secondary">Clustering</Badge>
-              </div>
-              <div className="text-sm text-gray-400 mb-4">
-                <span className="font-medium">84% accuracy</span> | <span className="font-medium">Workflow optimization</span>
-              </div>
               <div className="flex gap-2">
                 <Button size="sm" variant="outline">
                   <Github className="w-4 h-4 mr-2" />
@@ -160,7 +152,7 @@ function App() {
           {/* Project Card 4 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
             <Card className="bg-gray-800 border-gray-700">
-              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl h-48 w-full object-cover" />
               <CardHeader>
               <CardTitle className="text-lg text-white">Portfolio Website</CardTitle>
               <CardDescription className="text-gray-400">
@@ -168,15 +160,6 @@ function App() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary">React</Badge>
-                <Badge variant="secondary">TypeScript</Badge>
-                <Badge variant="secondary">Tailwind</Badge>
-                <Badge variant="secondary">ShadCN UI</Badge>
-              </div>
-              <div className="text-sm text-gray-400 mb-4">
-                <span className="font-medium">Modern design</span> | <span className="font-medium">Responsive</span>
-              </div>
               <div className="flex gap-2">
                 <Button size="sm" variant="outline">
                   <Github className="w-4 h-4 mr-2" />
@@ -194,7 +177,7 @@ function App() {
           {/* Project Card 5 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
             <Card className="bg-gray-800 border-gray-700">
-              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl h-48 w-full object-cover" />
               <CardHeader>
               <CardTitle className="text-lg text-white">Deep Learning Research</CardTitle>
               <CardDescription className="text-gray-400">
@@ -202,15 +185,6 @@ function App() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary">TensorFlow</Badge>
-                <Badge variant="secondary">Keras</Badge>
-                <Badge variant="secondary">CNNs</Badge>
-                <Badge variant="secondary">Research</Badge>
-              </div>
-              <div className="text-sm text-gray-400 mb-4">
-                <span className="font-medium">Multiple papers</span> | <span className="font-medium">State-of-art</span>
-              </div>
               <div className="flex gap-2">
                 <Button size="sm" variant="outline">
                   <Github className="w-4 h-4 mr-2" />
@@ -228,7 +202,7 @@ function App() {
           {/* Project Card 6 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
             <Card className="bg-gray-800 border-gray-700">
-              <img src="https://i.imgur.com/1234567890.png" alt="Project" className="rounded-t-2xl" />
+              <img src="https://i.imgur.com/1234567890.png" alt="Project" className="rounded-t-2xl h-48 w-full object-cover" />
               <CardHeader>
               <CardTitle className="text-lg text-white">Data Analytics Platform</CardTitle>
               <CardDescription className="text-gray-400">
@@ -236,15 +210,6 @@ function App() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary">Python</Badge>
-                <Badge variant="secondary">Flask</Badge>
-                <Badge variant="secondary">D3.js</Badge>
-                <Badge variant="secondary">PostgreSQL</Badge>
-              </div>
-              <div className="text-sm text-gray-400 mb-4">
-                <span className="font-medium">Real-time viz</span> | <span className="font-medium">Scalable</span>
-              </div>
               <div className="flex gap-2">
                 <Button size="sm" variant="outline">
                   <Github className="w-4 h-4 mr-2" />
