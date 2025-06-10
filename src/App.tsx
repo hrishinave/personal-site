@@ -354,7 +354,7 @@ function App() {
         <Card className="shadow-lg bg-gray-950 border-gray-800">
           <CardContent className="p-8">
             <p className="text-gray-400 leading-relaxed">
-              I'm a passionate Computer Science student at UT Dallas with a deep focus on machine learning and artificial intelligence. 
+              I'm a passionate Computer Science student at UT Dallas with a deep focus on machine learning (specifically reinforcement learning!). 
               My research spans from GAN-based anomaly detection in astronomical data to edge computing optimization. I've published 
               multiple research papers and achieved state-of-the-art performance in various ML applications. Currently, I'm working 
               on innovative projects that bridge the gap between theoretical research and practical applications. When I'm not coding 
@@ -379,7 +379,7 @@ function App() {
       >
         <h2 className="text-4xl font-display font-bold mb-4">Get in touch with me</h2>
         <p className="text-gray-400 mb-12">
-          Feel free to send me a message using the form or email me at hrishikesh@example.com
+          Feel free to send me a message using the form or email me at hrishinave@gmail.com
         </p>
         
         <div className="max-w-2xl">
@@ -408,18 +408,19 @@ function App() {
 
         {/* Social Links */}
         <div className="flex gap-4 mt-12">
-          <Button variant="outline" size="lg" className="rounded-2xl border-gray-700 text-gray-400 hover:text-white hover:border-gray-600">
-            <Github className="w-4 h-4 mr-2" />
-            GitHub
+          <Button variant="outline" size="lg" className="rounded-2xl border-gray-700 text-gray-400 hover:text-black hover:border-gray-600" asChild>
+            <a href='https://github.com/hrishinave' target='_blank' rel='noopener noreferrer'>
+              <Github className="w-4 h-4 mr-2" />
+              GitHub
+            </a>
           </Button>
-          <Button variant="outline" size="lg" className="rounded-2xl border-gray-700 text-gray-400 hover:text-white hover:border-gray-600">
-            <Linkedin className="w-4 h-4 mr-2" />
-            LinkedIn
+          <Button variant="outline" size="lg" className="rounded-2xl border-gray-700 text-gray-400 hover:text-black hover:border-gray-600" asChild>
+            <a href='https://www.linkedin.com/in/hrishikeshnaveenam/' target='_blank' rel='noopener noreferrer'>
+              <Linkedin className="w-4 h-4 mr-2" />
+              LinkedIn
+            </a>
           </Button>
-          <Button variant="outline" size="lg" className="rounded-2xl border-gray-700 text-gray-400 hover:text-white hover:border-gray-600">
-            <Mail className="w-4 h-4 mr-2" />
-            Email
-          </Button>
+        
         </div>
       </motion.section>
 
