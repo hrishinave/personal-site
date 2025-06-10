@@ -35,7 +35,7 @@ function App() {
             <img src="/my-genmoji.png" alt="Hrishikesh Genmoji" className="w-16 h-16 inline-block" />
           </div>
           <h1 className="text-lg md:text-2xl font-display font-medium mb-4">
-            Hi, I'm <span className="animate-rainbow bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">Hrishikesh</span>—a developer, researcher, and ML enthusiast.
+            Hi, I'm <span className="animate-rainbow bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">Hrishikesh</span>—an undergrad researcher and fullstack developer.
           </h1>
           <p className="text-sm md:text-base text-gray-400 mb-6 max-w-xl">
             I'm currently a Computer Science Student @ UT Dallas and a Research Assistant @ the ANRL Lab headed by Dr. Jason Jue.
@@ -71,7 +71,7 @@ function App() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl font-display font-bold mb-12">Projects</h2>
+        <h2 className="text-4xl font-display font-bold mb-12">Check out my projects!</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Project Card 1 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
@@ -108,7 +108,7 @@ function App() {
               <CardHeader>
               <CardTitle className="text-lg text-white">NetGain NBA</CardTitle>
               <CardDescription className="text-gray-400">
-                Interactive simulator generating complete playoff brackets for NBA teams from 1995-2024.
+                Interactive simulator generating complete playoff brackets for NBA teams from 1995-2024 made with my team from AIS UT Dallas.
               </CardDescription>
             </CardHeader>
             <CardContent>
