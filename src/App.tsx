@@ -8,11 +8,29 @@ import { Textarea } from './components/ui/textarea'
 import { Github, ExternalLink, Mail, Linkedin } from 'lucide-react'
 
 function App() {
+  const [darkMode, setDarkMode] = React.useState(true)
+  const toggleTheme = () => setDarkMode(!darkMode)
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className={darkMode ? 'dark' : ''}>
+      <div className="min-h-screen bg-background text-foreground transition-colors">
+        <nav className="fixed top-0 left-0 right-0 bg-background/70 backdrop-blur border-b border-border z-50">
+          <div className="max-w-screen-lg mx-auto flex items-center justify-between p-4">
+            <span className="font-display text-lg font-bold">HN</span>
+            <div className="flex items-center gap-4 text-sm">
+              <a href="#projects" className="hover:text-blue-400">Projects</a>
+              <a href="#experience" className="hover:text-blue-400">Experience</a>
+              <a href="#about" className="hover:text-blue-400">About</a>
+              <a href="#contact" className="hover:text-blue-400">Contact</a>
+              <button onClick={toggleTheme} className="border px-2 rounded">
+                {darkMode ? 'Light' : 'Dark'}
+              </button>
+            </div>
+          </div>
+        </nav>
       {/* Hero Section */}
       <motion.section
-        className="max-w-screen-lg mx-auto px-6 md:px-12 py-20"
+        id="hero"
+        className="max-w-screen-lg mx-auto px-6 md:px-12 py-20 bg-gradient-to-br from-blue-200 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -21,7 +39,7 @@ function App() {
           <div className="mb-4">
             <span className="text-base font-medium text-gray-500">👋</span>
           </div>
-          <h1 className="text-lg md:text-2xl font-medium mb-4">
+          <h1 className="text-lg md:text-2xl font-display font-medium mb-4">
             Hi, I'm <span className="text-blue-400">Hrishikesh</span>—a developer, researcher, and ML enthusiast.
           </h1>
           <p className="text-sm md:text-base text-gray-400 mb-6 max-w-xl">
@@ -42,17 +60,20 @@ function App() {
 
       {/* Projects Section */}
       <motion.section
+        id="projects"
         className="max-w-screen-lg mx-auto px-6 md:px-12 py-24"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl font-bold mb-12">Projects</h2>
+        <h2 className="text-4xl font-display font-bold mb-12">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Project Card 1 */}
-          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
-            <CardHeader>
+          <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="bg-gray-950 border-gray-800">
+              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <CardHeader>
               <CardTitle className="text-lg text-white">GAN-Based Anomaly Detection</CardTitle>
               <CardDescription className="text-gray-400">
                 AI system using DCGAN and StyleGAN for astronomical image synthesis and rare-event detection.
@@ -79,11 +100,14 @@ function App() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Project Card 2 */}
-          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
-            <CardHeader>
+          <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="bg-gray-950 border-gray-800">
+              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <CardHeader>
               <CardTitle className="text-lg text-white">NBA Playoff Simulator</CardTitle>
               <CardDescription className="text-gray-400">
                 Interactive simulator generating complete playoff brackets for NBA teams from 1995-2024.
@@ -110,11 +134,14 @@ function App() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Project Card 3 */}
-          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
-            <CardHeader>
+          <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="bg-gray-950 border-gray-800">
+              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <CardHeader>
               <CardTitle className="text-lg text-white">Edge Computing Optimizer</CardTitle>
               <CardDescription className="text-gray-400">
                 K-means clustering system for volunteer edge node workflow placement optimization.
@@ -141,11 +168,14 @@ function App() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Project Card 4 */}
-          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
-            <CardHeader>
+          <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="bg-gray-950 border-gray-800">
+              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <CardHeader>
               <CardTitle className="text-lg text-white">Portfolio Website</CardTitle>
               <CardDescription className="text-gray-400">
                 Modern, responsive portfolio built with React, TypeScript, and Tailwind CSS.
@@ -172,11 +202,14 @@ function App() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Project Card 5 */}
-          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
-            <CardHeader>
+          <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="bg-gray-950 border-gray-800">
+              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <CardHeader>
               <CardTitle className="text-lg text-white">Deep Learning Research</CardTitle>
               <CardDescription className="text-gray-400">
                 Comprehensive ML research projects exploring various neural network architectures.
@@ -203,11 +236,14 @@ function App() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Project Card 6 */}
-          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
-            <CardHeader>
+          <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="bg-gray-950 border-gray-800">
+              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <CardHeader>
               <CardTitle className="text-lg text-white">Data Analytics Platform</CardTitle>
               <CardDescription className="text-gray-400">
                 Full-stack platform for data visualization and statistical analysis.
@@ -234,7 +270,8 @@ function App() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -243,13 +280,14 @@ function App() {
 
       {/* Experience Section */}
       <motion.section
+        id="experience"
         className="max-w-screen-lg mx-auto px-6 md:px-12 py-24"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl font-bold mb-12">Experience</h2>
+        <h2 className="text-4xl font-display font-bold mb-12">Experience</h2>
         <div className="space-y-8">
           {/* Experience Item 3 */}
           <Card className="shadow-lg bg-gray-950 border-gray-800">
@@ -305,13 +343,14 @@ function App() {
 
       {/* About Section */}
       <motion.section
+        id="about"
         className="max-w-screen-lg mx-auto px-6 md:px-12 py-24"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl font-bold mb-12">About</h2>
+        <h2 className="text-4xl font-display font-bold mb-12">About</h2>
         <Card className="shadow-lg bg-gray-950 border-gray-800">
           <CardContent className="p-8">
             <p className="text-gray-400 leading-relaxed">
@@ -331,13 +370,14 @@ function App() {
 
       {/* Contact Section */}
       <motion.section
+        id="contact"
         className="max-w-screen-lg mx-auto px-6 md:px-12 py-24"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl font-bold mb-4">Get in touch with me</h2>
+        <h2 className="text-4xl font-display font-bold mb-4">Get in touch with me</h2>
         <p className="text-gray-400 mb-12">
           Feel free to send me a message using the form or email me at hrishikesh@example.com
         </p>
@@ -348,17 +388,17 @@ function App() {
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-2">Name *</label>
-                  <Input placeholder="Your name" className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500" />
+                  <Input placeholder="Your name" className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 rounded-3xl px-4 py-3" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-2">Email *</label>
-                  <Input type="email" placeholder="Your email" className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500" />
+                  <Input type="email" placeholder="Your email" className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 rounded-3xl px-4 py-3" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-2">Message *</label>
-                  <Textarea placeholder="Your message" rows={5} className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500" />
+                  <Textarea placeholder="Your message" rows={5} className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 rounded-3xl px-4 py-3" />
                 </div>
-                <Button className="w-full rounded-2xl" size="lg">
+                <Button className="w-full rounded-3xl font-semibold" size="lg">
                   Send
                 </Button>
               </div>
@@ -390,6 +430,7 @@ function App() {
         </div>
       </footer>
     </div>
+  </div>
   )
 }
 
