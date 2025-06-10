@@ -9,24 +9,36 @@ import { Github, ExternalLink, Mail, Linkedin } from 'lucide-react'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <motion.section
-        className="max-w-screen-lg mx-auto px-6 md:px-12 py-24"
+        className="max-w-screen-lg mx-auto px-6 md:px-12 py-20"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-5xl md:text-7xl font-bold text-left mb-4">
-          Hrishikesh Naveenam
-        </h1>
-        <p className="text-lg text-gray-600 text-left">
-          Computer Science Student | Aspiring ML Researcher
-        </p>
-      </motion.section>
+        <div className="text-left">
+          <div className="mb-4">
+            <span className="text-base font-medium text-gray-500">👋</span>
+          </div>
+          <h1 className="text-lg md:text-2xl font-medium mb-4">
+            Hi, I'm <span className="text-blue-400">Hrishikesh</span>—a developer, researcher, and ML enthusiast.
+          </h1>
+          <p className="text-sm md:text-base text-gray-400 mb-6 max-w-xl">
+            I'm currently a Computer Science Student @ UT Dallas and a Research Assistant @ the ANRL Lab headed by Dr. Jason Jue.
+          </p>
 
-      {/* Section Divider */}
-      <hr className="max-w-screen-lg mx-auto border-gray-200" />
+          <div className="flex gap-4">
+            <Button size="lg" className="rounded-2xl">
+              <Mail className="w-4 h-4 mr-2" />
+              Contact Me
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-2xl">
+              View Resume
+            </Button>
+          </div>
+        </div>
+      </motion.section>
 
       {/* Projects Section */}
       <motion.section
@@ -37,21 +49,55 @@ function App() {
         viewport={{ once: true }}
       >
         <h2 className="text-4xl font-bold mb-12">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Project Card 1 */}
-          <Card className="shadow-md">
+          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
             <CardHeader>
-              <CardTitle>Machine Learning Portfolio</CardTitle>
-              <CardDescription>
-                A comprehensive collection of ML projects showcasing various algorithms and techniques
+              <CardTitle className="text-lg text-white">GAN-Based Anomaly Detection</CardTitle>
+              <CardDescription className="text-gray-400">
+                AI system using DCGAN and StyleGAN for astronomical image synthesis and rare-event detection.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2 mb-4">
                 <Badge variant="secondary">Python</Badge>
-                <Badge variant="secondary">TensorFlow</Badge>
-                <Badge variant="secondary">Scikit-learn</Badge>
-                <Badge variant="secondary">Jupyter</Badge>
+                <Badge variant="secondary">PyTorch</Badge>
+                <Badge variant="secondary">GANs</Badge>
+                <Badge variant="secondary">Computer Vision</Badge>
+              </div>
+              <div className="text-sm text-gray-400 mb-4">
+                <span className="font-medium">ROC-AUC: 0.85</span> | <span className="font-medium">15% improvement</span>
+              </div>
+              <div className="flex gap-2">
+                <Button size="sm" variant="outline">
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </Button>
+                <Button size="sm" variant="outline">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Paper
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Project Card 2 */}
+          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
+            <CardHeader>
+              <CardTitle className="text-lg text-white">NBA Playoff Simulator</CardTitle>
+              <CardDescription className="text-gray-400">
+                Interactive simulator generating complete playoff brackets for NBA teams from 1995-2024.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Badge variant="secondary">Python</Badge>
+                <Badge variant="secondary">TabNet</Badge>
+                <Badge variant="secondary">NBA API</Badge>
+                <Badge variant="secondary">Data Science</Badge>
+              </div>
+              <div className="text-sm text-gray-400 mb-4">
+                <span className="font-medium">30 years of data</span> | <span className="font-medium">Enhanced accuracy</span>
               </div>
               <div className="flex gap-2">
                 <Button size="sm" variant="outline">
@@ -66,20 +112,54 @@ function App() {
             </CardContent>
           </Card>
 
-          {/* Project Card 2 */}
-          <Card className="shadow-md">
+          {/* Project Card 3 */}
+          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
             <CardHeader>
-              <CardTitle>Web Development Project</CardTitle>
-              <CardDescription>
-                Full-stack web application with modern technologies and clean design
+              <CardTitle className="text-lg text-white">Edge Computing Optimizer</CardTitle>
+              <CardDescription className="text-gray-400">
+                K-means clustering system for volunteer edge node workflow placement optimization.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Badge variant="secondary">Python</Badge>
+                <Badge variant="secondary">K-means</Badge>
+                <Badge variant="secondary">Edge Computing</Badge>
+                <Badge variant="secondary">Clustering</Badge>
+              </div>
+              <div className="text-sm text-gray-400 mb-4">
+                <span className="font-medium">84% accuracy</span> | <span className="font-medium">Workflow optimization</span>
+              </div>
+              <div className="flex gap-2">
+                <Button size="sm" variant="outline">
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </Button>
+                <Button size="sm" variant="outline">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Research
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Project Card 4 */}
+          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
+            <CardHeader>
+              <CardTitle className="text-lg text-white">Portfolio Website</CardTitle>
+              <CardDescription className="text-gray-400">
+                Modern, responsive portfolio built with React, TypeScript, and Tailwind CSS.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2 mb-4">
                 <Badge variant="secondary">React</Badge>
-                <Badge variant="secondary">Node.js</Badge>
                 <Badge variant="secondary">TypeScript</Badge>
-                <Badge variant="secondary">PostgreSQL</Badge>
+                <Badge variant="secondary">Tailwind</Badge>
+                <Badge variant="secondary">ShadCN UI</Badge>
+              </div>
+              <div className="text-sm text-gray-400 mb-4">
+                <span className="font-medium">Modern design</span> | <span className="font-medium">Responsive</span>
               </div>
               <div className="flex gap-2">
                 <Button size="sm" variant="outline">
@@ -93,11 +173,73 @@ function App() {
               </div>
             </CardContent>
           </Card>
+
+          {/* Project Card 5 */}
+          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
+            <CardHeader>
+              <CardTitle className="text-lg text-white">Deep Learning Research</CardTitle>
+              <CardDescription className="text-gray-400">
+                Comprehensive ML research projects exploring various neural network architectures.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Badge variant="secondary">TensorFlow</Badge>
+                <Badge variant="secondary">Keras</Badge>
+                <Badge variant="secondary">CNNs</Badge>
+                <Badge variant="secondary">Research</Badge>
+              </div>
+              <div className="text-sm text-gray-400 mb-4">
+                <span className="font-medium">Multiple papers</span> | <span className="font-medium">State-of-art</span>
+              </div>
+              <div className="flex gap-2">
+                <Button size="sm" variant="outline">
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </Button>
+                <Button size="sm" variant="outline">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Publications
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Project Card 6 */}
+          <Card className="shadow-lg hover:shadow-xl transition-shadow bg-gray-950 border-gray-800">
+            <CardHeader>
+              <CardTitle className="text-lg text-white">Data Analytics Platform</CardTitle>
+              <CardDescription className="text-gray-400">
+                Full-stack platform for data visualization and statistical analysis.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Badge variant="secondary">Python</Badge>
+                <Badge variant="secondary">Flask</Badge>
+                <Badge variant="secondary">D3.js</Badge>
+                <Badge variant="secondary">PostgreSQL</Badge>
+              </div>
+              <div className="text-sm text-gray-400 mb-4">
+                <span className="font-medium">Real-time viz</span> | <span className="font-medium">Scalable</span>
+              </div>
+              <div className="flex gap-2">
+                <Button size="sm" variant="outline">
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </Button>
+                <Button size="sm" variant="outline">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Demo
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </motion.section>
 
       {/* Section Divider */}
-      <hr className="max-w-screen-lg mx-auto border-gray-200" />
+      <hr className="max-w-screen-lg mx-auto border-gray-800" />
 
       {/* Experience Section */}
       <motion.section
@@ -109,32 +251,49 @@ function App() {
       >
         <h2 className="text-4xl font-bold mb-12">Experience</h2>
         <div className="space-y-8">
-          {/* Experience Item 1 */}
-          <Card className="shadow-md">
+          {/* Experience Item 3 */}
+          <Card className="shadow-lg bg-gray-950 border-gray-800">
             <CardHeader>
-              <CardTitle>Software Engineering Intern</CardTitle>
-              <CardDescription>Tech Company • Summer 2024</CardDescription>
+              <CardTitle className="text-white">Researcher</CardTitle>
+              <CardDescription className="text-gray-400">ACM UT Dallas • Spring 2025</CardDescription>
             </CardHeader>
             <CardContent>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Developed and maintained web applications using React and Node.js</li>
-                <li>• Collaborated with cross-functional teams to deliver high-quality software</li>
-                <li>• Implemented automated testing strategies improving code coverage by 30%</li>
+              <ul className="text-sm text-gray-400 space-y-1">
+                <li>• Developed and optimized DCGAN architecture to generate realistic synthetic astronomical images, improving anomaly detection metrics (Recall: 0.72, ROC-AUC: 0.85).</li>
+                <li>• Implemented StyleGAN, fine-tuning pre-trained weights on the Galaxy10 dataset, resulting in high-fidelity image synthesis and enhanced model performance (ROC-AUC: 0.81).</li>
+                <li>• Enhanced rare-event detection performance by 15% over baseline through GAN-based augmentation.</li>
+                <li>• Developed a novel anomaly detection pipeline using a combination of GAN-based augmentation and traditional machine learning techniques, achieving state-of-the-art performance in rare-event detection.</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Experience Item 1 */}
+          <Card className="shadow-lg bg-gray-950 border-gray-800">
+            <CardHeader>
+              <CardTitle className="text-white">ML Engineer</CardTitle>
+              <CardDescription className="text-gray-400">AIS UT Dallas • Spring 2025</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm text-gray-400 space-y-1">
+                <li>• Collaborated in developing an interactive NBA Playoff simulator, enabling users to generate complete playoff brackets for any NBA team and season from 1995 to 2024.</li>
+                <li>• Conducted data cleaning and preprocessing in Python on extensive team and player datasets retrieved from the official NBA API.</li>
+                <li>• Built and optimized predictive classification and regression models using TabNet for enhanced accuracy in analyzing tabular data.</li>
               </ul>
             </CardContent>
           </Card>
 
           {/* Experience Item 2 */}
-          <Card className="shadow-md">
+          <Card className="shadow-lg bg-gray-950 border-gray-800">
             <CardHeader>
-              <CardTitle>Research Assistant</CardTitle>
-              <CardDescription>VIMAN Lab • Aug 2023 - Feb 2024</CardDescription>
+              <CardTitle className="text-white">Research Assistant</CardTitle>
+              <CardDescription className="text-gray-400">VIMAN Lab @ Univ of Missouri • Aug 2023 - Feb 2024</CardDescription>
             </CardHeader>
             <CardContent>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Conducted research in machine learning applications for computer vision</li>
-                <li>• Published findings in peer-reviewed conferences and journals</li>
-                <li>• Mentored undergraduate students in research methodologies</li>
+              <ul className="text-sm text-gray-400 space-y-1">
+                <li>• Volunteer Edge Computing at the VIMAN Lab</li>
+                <li>• Designed and implemented K-means clustering algorithms to group volunteer edge nodes, achieving 84% accuracy in workflow placement. </li>
+                <li>• Used the Elbow Method to identify optimal cluster configurations based on parameters like CPU, RAM, and storage</li>
+                <li>• Created detailed visualizations to showcase clustering and allocation results, highlighting trends and patterns critical to workflow optimization</li>
               </ul>
             </CardContent>
           </Card>
@@ -142,7 +301,7 @@ function App() {
       </motion.section>
 
       {/* Section Divider */}
-      <hr className="max-w-screen-lg mx-auto border-gray-200" />
+      <hr className="max-w-screen-lg mx-auto border-gray-800" />
 
       {/* About Section */}
       <motion.section
@@ -153,21 +312,22 @@ function App() {
         viewport={{ once: true }}
       >
         <h2 className="text-4xl font-bold mb-12">About</h2>
-        <Card className="shadow-md">
+        <Card className="shadow-lg bg-gray-950 border-gray-800">
           <CardContent className="p-8">
-            <p className="text-gray-600 leading-relaxed">
-              I'm a passionate Computer Science student with a deep interest in machine learning and artificial intelligence. 
-              My journey in tech began with a curiosity about how computers can learn and make decisions, which has evolved 
-              into a focused pursuit of research in ML applications. I enjoy building projects that solve real-world problems 
-              and contribute to the advancement of technology. When I'm not coding, you can find me reading research papers, 
-              contributing to open-source projects, or exploring the latest developments in AI.
+            <p className="text-gray-400 leading-relaxed">
+              I'm a passionate Computer Science student at UT Dallas with a deep focus on machine learning and artificial intelligence. 
+              My research spans from GAN-based anomaly detection in astronomical data to edge computing optimization. I've published 
+              multiple research papers and achieved state-of-the-art performance in various ML applications. Currently, I'm working 
+              on innovative projects that bridge the gap between theoretical research and practical applications. When I'm not coding 
+              or researching, you can find me exploring the latest developments in AI, contributing to open-source projects, or 
+              mentoring fellow students in machine learning concepts.
             </p>
           </CardContent>
         </Card>
       </motion.section>
 
       {/* Section Divider */}
-      <hr className="max-w-screen-lg mx-auto border-gray-200" />
+      <hr className="max-w-screen-lg mx-auto border-gray-800" />
 
       {/* Contact Section */}
       <motion.section
@@ -177,62 +337,58 @@ function App() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl font-bold mb-12">Get in touch</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card className="shadow-md">
-            <CardHeader>
-              <CardTitle>Send me a message</CardTitle>
-              <CardDescription>
-                I'd love to hear from you. Send me a message and I'll respond as soon as possible.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div>
-                <Input placeholder="Your name" />
+        <h2 className="text-4xl font-bold mb-4">Get in touch with me</h2>
+        <p className="text-gray-400 mb-12">
+          Feel free to send me a message using the form or email me at hrishikesh@example.com
+        </p>
+        
+        <div className="max-w-2xl">
+          <Card className="shadow-lg bg-gray-950 border-gray-800">
+            <CardContent className="p-8">
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Name *</label>
+                  <Input placeholder="Your name" className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Email *</label>
+                  <Input type="email" placeholder="Your email" className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Message *</label>
+                  <Textarea placeholder="Your message" rows={5} className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500" />
+                </div>
+                <Button className="w-full rounded-2xl" size="lg">
+                  Send
+                </Button>
               </div>
-              <div>
-                <Input type="email" placeholder="Your email" />
-              </div>
-              <div>
-                <Textarea placeholder="Your message" rows={5} />
-              </div>
-              <Button className="w-full">Send Message</Button>
             </CardContent>
           </Card>
+        </div>
 
-          {/* Contact Info */}
-          <div className="flex flex-col justify-center space-y-8">
-            <div className="flex items-center space-x-4">
-              <Mail className="w-6 h-6 text-gray-600" />
-              <div>
-                <h3 className="font-semibold">Email</h3>
-                <p className="text-gray-600">hrishikesh@example.com</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Linkedin className="w-6 h-6 text-gray-600" />
-              <div>
-                <h3 className="font-semibold">LinkedIn</h3>
-                <p className="text-gray-600">linkedin.com/in/hrishikesh-naveenam</p>
-              </div>
-            </div>
-            <div className="flex space-x-4">
-              <Button variant="outline" size="lg">
-                <Mail className="w-4 h-4 mr-2" />
-                Email Me
-              </Button>
-              <Button variant="outline" size="lg">
-                <Linkedin className="w-4 h-4 mr-2" />
-                LinkedIn
-              </Button>
-            </div>
-          </div>
+        {/* Social Links */}
+        <div className="flex gap-4 mt-12">
+          <Button variant="outline" size="lg" className="rounded-2xl border-gray-700 text-gray-400 hover:text-white hover:border-gray-600">
+            <Github className="w-4 h-4 mr-2" />
+            GitHub
+          </Button>
+          <Button variant="outline" size="lg" className="rounded-2xl border-gray-700 text-gray-400 hover:text-white hover:border-gray-600">
+            <Linkedin className="w-4 h-4 mr-2" />
+            LinkedIn
+          </Button>
+          <Button variant="outline" size="lg" className="rounded-2xl border-gray-700 text-gray-400 hover:text-white hover:border-gray-600">
+            <Mail className="w-4 h-4 mr-2" />
+            Email
+          </Button>
         </div>
       </motion.section>
 
-      {/* Footer Spacing */}
-      <div className="h-24"></div>
+      {/* Footer */}
+      <footer className="max-w-screen-lg mx-auto px-6 md:px-12 py-8 border-t border-gray-800">
+        <div className="text-center text-gray-500">
+          <p>Hrishikesh Naveenam © 2025</p>
+        </div>
+      </footer>
     </div>
   )
 }
