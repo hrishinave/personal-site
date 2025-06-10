@@ -42,12 +42,16 @@ function App() {
           </p>
 
           <div className="flex gap-4">
-            <Button size="lg" className="rounded-2xl">
-              <Mail className="w-4 h-4 mr-2" />
-              Contact Me
+            <Button size="lg" className="rounded-2xl" asChild>
+              <a href="#contact">
+                <Mail className="w-4 h-4 mr-2" />
+                Contact Me
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-2xl">
-              View Resume
+            <Button size="lg" variant="outline" className="rounded-2xl" asChild>
+              <a href="/resume-june25.pdf" target="_blank" rel="noopener noreferrer">
+                View Resume
+              </a>
             </Button>
           </div>
         </div>
@@ -71,19 +75,10 @@ function App() {
               <CardHeader>
               <CardTitle className="text-lg text-white">GAN-Based Anomaly Detection</CardTitle>
               <CardDescription className="text-gray-400">
-                AI system using DCGAN and StyleGAN for astronomical image synthesis and rare-event detection.
+                AI system using DCGAN, StyleGAN, VQGAN and VAE for astronomical image synthesis and rare-event detection.
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary">Python</Badge>
-                <Badge variant="secondary">PyTorch</Badge>
-                <Badge variant="secondary">GANs</Badge>
-                <Badge variant="secondary">Computer Vision</Badge>
-              </div>
-              <div className="text-sm text-gray-400 mb-4">
-                <span className="font-medium">ROC-AUC: 0.85</span> | <span className="font-medium">15% improvement</span>
-              </div>
               <div className="flex gap-2">
                 <Button size="sm" variant="outline">
                   <Github className="w-4 h-4 mr-2" />
@@ -101,26 +96,19 @@ function App() {
           {/* Project Card 2 */}
           <motion.div whileHover={{ scale: 1.05 }} className="shadow-lg hover:shadow-xl transition-shadow">
             <Card className="bg-gray-950 border-gray-800">
-              <img src="https://via.placeholder.com/300x200" alt="Project" className="rounded-t-2xl" />
+              <img src="netgainnba-poster.png" alt="Project" className="rounded-t-2xl" />
               <CardHeader>
-              <CardTitle className="text-lg text-white">NBA Playoff Simulator</CardTitle>
+              <CardTitle className="text-lg text-white">NetGain NBA</CardTitle>
               <CardDescription className="text-gray-400">
                 Interactive simulator generating complete playoff brackets for NBA teams from 1995-2024.
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary">Python</Badge>
-                <Badge variant="secondary">TabNet</Badge>
-                <Badge variant="secondary">NBA API</Badge>
-                <Badge variant="secondary">Data Science</Badge>
-              </div>
-              <div className="text-sm text-gray-400 mb-4">
-                <span className="font-medium">30 years of data</span> | <span className="font-medium">Enhanced accuracy</span>
-              </div>
+        
               <div className="flex gap-2">
                 <Button size="sm" variant="outline">
                   <Github className="w-4 h-4 mr-2" />
+                  <a href="https://github.com/Sarvesh30/NetGainNBA" target="_blank" rel="noopener noreferrer"></a>
                   GitHub
                 </Button>
                 <Button size="sm" variant="outline">
