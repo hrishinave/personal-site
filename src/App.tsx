@@ -124,7 +124,7 @@ function App() {
             <span className="animate-rainbow bg-gradient-to-r from-red-400 via-orange-400 via-yellow-400 via-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Naveenam</span>
           </h1>
           <p className="text-gray-400 mt-2 leading-relaxed">
-            I'm a student at UT Dallas studying Computer Science + Mathematics. Currently part of ARNL Lab @ UTD headed by Dr. Jason Jue.
+            I'm a student at UT Dallas studying Computer Science + Mathematics. Currently part of the ARNL Lab @ UTD headed by Dr. Jason Jue.
           </p>
           <p className="text-gray-400 mt-2 leading-relaxed">
             Feel free to reach out to me at <a href="mailto:hrishinave@gmail.com" className="text-sky-400 hover:text-sky-300">hrishinave@gmail.com</a>
