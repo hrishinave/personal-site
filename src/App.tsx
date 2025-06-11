@@ -80,7 +80,7 @@ function App() {
     },
     {title: 'Cold Email Agent', desc: 'Agentic cold email outreach tool to apply for research lab internships.'},
     { title: 'Portfolio Website', desc: 'Modern, responsive portfolio built with React, TypeScript and Tailwind CSS.' },
-    
+
   ];
 
   const experience: ItemProps[] = [
@@ -117,6 +117,9 @@ function App() {
           </h1>
           <p className="text-gray-400 mt-2 leading-relaxed">
             I'm a student at UT Dallas studying Computer Science + Mathematics. Currently part of ARNL Lab @ UTD headed by Dr. Jason Jue.
+          </p>
+          <p className="text-gray-400 mt-2 leading-relaxed">
+            Feel free to reach out to me at <a href="mailto:hrishinave@gmail.com" className="text-gray-400 hover:text-gray-300">hrishinave@gmail.com</a>
           </p>
         </div>
         
