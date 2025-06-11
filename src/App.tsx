@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, FileText, ExternalLink, Code } from 'lucide-react';
+import { Analytics } from "@vercel/analytics/react"
 
 // Ensure Manrope font is available
 const fontLink = document.createElement('link');
@@ -98,7 +99,8 @@ function App() {
 
   return (
     <div className="min-h-screen bg-dark-950 text-gray-50 font-sans">
-      {/* Header */}
+      <Analytics />
+        {/* Header */}
       <header className="px-6 py-10 md:py-16 max-w-5xl mx-auto flex flex-col gap-2">
         <div className="flex items-start justify-between">
           {/* Genmoji image */}
