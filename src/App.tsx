@@ -90,7 +90,7 @@ function App() {
   ];
 
   const experience: ItemProps[] = [
-    { title: 'Researcher – ARNL Lab', desc: 'Reinforcement learning for network resource allocation.' },
+    { title: 'Research Assistant – ARNL Lab', desc: 'Reinforcement learning for network resource allocation.' },
     { title: 'Researcher – ACM UT Dallas', desc: 'Developed GAN-based augmentation pipeline improving astronomical anomaly-detection metrics.' },
     { title: 'ML Engineer – AIS UT Dallas', desc: 'Built interactive NBA playoff simulator and optimised TabNet models on official NBA data.' },
     { title: 'Research Assistant – VIMAN Lab', desc: 'Implemented K-means clustering for volunteer edge nodes achieving 84 % placement accuracy.' }
