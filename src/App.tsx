@@ -78,14 +78,20 @@ function App() {
       desc: 'iOS app that helps UT Dallas students discover and share study locations in a concise manner.',
       codeUrl: 'https://github.com/hrishinave/UTD-Spots'
     },
-    {title: 'Cold Email Agent', desc: 'Agentic cold email outreach tool to apply for research lab internships.'},
-    { title: 'Portfolio Website', desc: 'Modern, responsive portfolio built with React, TypeScript and Tailwind CSS.' },
+    {title: 'Cold Email Agent', 
+     desc: 'Agentic cold email outreach tool to apply for research lab internships.',
+     codeUrl: 'https://github.com/hrishinave/email-agent'
+    },
+    { title: 'Portfolio Website', 
+      desc: 'Modern, responsive portfolio built with React, TypeScript and Tailwind CSS.',
+      codeUrl: 'https://github.com/hrishinave/personal-site'
+    },
 
   ];
 
   const experience: ItemProps[] = [
-    { title: 'Researcher – ARNL Lab', desc: '.' },
-    { title: 'Researcher – ACM UT Dallas', desc: 'Reinforcement learning for network resource allocation.' },
+    { title: 'Researcher – ARNL Lab', desc: 'Reinforcement learning for network resource allocation.' },
+    { title: 'Researcher – ACM UT Dallas', desc: 'Developed GAN-based augmentation pipeline improving astronomical anomaly-detection metrics.' },
     { title: 'ML Engineer – AIS UT Dallas', desc: 'Built interactive NBA playoff simulator and optimised TabNet models on official NBA data.' },
     { title: 'Research Assistant – VIMAN Lab', desc: 'Implemented K-means clustering for volunteer edge nodes achieving 84 % placement accuracy.' }
   ];
@@ -119,7 +125,7 @@ function App() {
             I'm a student at UT Dallas studying Computer Science + Mathematics. Currently part of ARNL Lab @ UTD headed by Dr. Jason Jue.
           </p>
           <p className="text-gray-400 mt-2 leading-relaxed">
-            Feel free to reach out to me at <a href="mailto:hrishinave@gmail.com" className="text-gray-400 hover:text-gray-300">hrishinave@gmail.com</a>
+            Feel free to reach out to me at <a href="mailto:hrishinave@gmail.com" className="text-sky-400 hover:text-sky-300">hrishinave@gmail.com</a>
           </p>
         </div>
         
