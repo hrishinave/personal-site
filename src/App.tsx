@@ -98,63 +98,76 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-dark-950 text-gray-50 font-sans">
-      <Analytics />
+    <div className="min-h-screen bg-dark-950 text-gray-50 font-sans relative overflow-hidden">
+      {/* Background lighting effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Purple glow */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl" />
+        {/* Blue glow */}
+        <div className="absolute top-1/2 -left-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl" />
+        {/* Teal glow */}
+        <div className="absolute -bottom-40 right-1/4 w-80 h-80 bg-teal-500/20 rounded-full blur-3xl" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        <Analytics />
         {/* Header */}
-      <header className="px-6 py-10 md:py-16 max-w-5xl mx-auto flex flex-col gap-2">
-        <div className="flex items-start justify-between">
-          {/* Genmoji image */}
-          <img src="/my-genmoji.png" alt="Hrishikesh" className="w-12 h-12 rounded-lg" />
+        <header className="px-6 py-10 md:py-16 max-w-5xl mx-auto flex flex-col gap-2">
+          <div className="flex items-start justify-between">
+            {/* Genmoji image */}
+            <img src="/my-genmoji.png" alt="Hrishikesh" className="w-12 h-12 rounded-lg" />
+            
+            {/* Social Icons */}
+            <div className="flex items-center gap-4">
+              <a href="https://github.com/hrishinave" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-300">
+                <Github className="w-5 h-5" />
+              </a>
+              <a href="https://www.linkedin.com/in/hrishikeshnaveenam/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-300">
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
           
-          {/* Social Icons */}
-          <div className="flex items-center gap-4">
-            <a href="https://github.com/hrishinave" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-300">
-              <Github className="w-5 h-5" />
-            </a>
-            <a href="https://www.linkedin.com/in/hrishikeshnaveenam/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-300">
-              <Linkedin className="w-5 h-5" />
+          <div className="mt-6">
+            <h1 className="text-3xl md:text-4xl font-bold">
+              <span className="animate-rainbow bg-gradient-to-r from-red-400 via-orange-400 via-yellow-400 via-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Hrishikesh</span>
+              &nbsp;
+              <span className="animate-rainbow bg-gradient-to-r from-red-400 via-orange-400 via-yellow-400 via-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Naveenam</span>
+            </h1>
+            <p className="text-gray-400 mt-2 leading-relaxed">
+              I'm a student at UT Dallas studying Computer Science + Mathematics. Currently part of the ARNL Lab @ UTD headed by Dr. Jason Jue.
+            </p>
+            <p className="text-gray-400 mt-2 leading-relaxed">
+              Feel free to reach out to me at <a href="mailto:hrishinave@gmail.com" className="text-sky-400 hover:text-sky-300">hrishinave@gmail.com</a>
+            </p>
+          </div>
+          
+          {/* Resume Link */}
+          <div className="flex items-center mt-6">
+            <a 
+              href="/resume june25.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-lg text-gray-300 hover:text-gray-50 hover:bg-dark-700 transition-colors"
+            >
+              <FileText className="w-4 h-4" />
+              Resume
             </a>
           </div>
-        </div>
-        
-        <div className="mt-6">
-          <h1 className="text-3xl md:text-4xl font-bold">
-            <span className="animate-rainbow bg-gradient-to-r from-red-400 via-orange-400 via-yellow-400 via-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Hrishikesh</span>
-            &nbsp;
-            <span className="animate-rainbow bg-gradient-to-r from-red-400 via-orange-400 via-yellow-400 via-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Naveenam</span>
-          </h1>
-          <p className="text-gray-400 mt-2 leading-relaxed">
-            I'm a student at UT Dallas studying Computer Science + Mathematics. Currently part of the ARNL Lab @ UTD headed by Dr. Jason Jue.
-          </p>
-          <p className="text-gray-400 mt-2 leading-relaxed">
-            Feel free to reach out to me at <a href="mailto:hrishinave@gmail.com" className="text-sky-400 hover:text-sky-300">hrishinave@gmail.com</a>
-          </p>
-        </div>
-        
-        {/* Resume Link */}
-        <div className="flex items-center mt-6">
-          <a 
-            href="/resume june25.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-dark-800 border border-dark-700 rounded-lg text-gray-300 hover:text-gray-50 hover:bg-dark-700 transition-colors"
-          >
-            <FileText className="w-4 h-4" />
-            Resume
-          </a>
-        </div>
-      </header>
+        </header>
 
-      {/* 2-column grid */}
-      <main className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 px-6 pb-24">
-        <Column title="Projects" items={projects} />
-        <Column title="Experience" items={experience} />
-      </main>
+        {/* 2-column grid */}
+        <main className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 px-6 pb-24">
+          <Column title="Projects" items={projects} />
+          <Column title="Experience" items={experience} />
+        </main>
 
-      {/* Footer */}
-      <footer className="max-w-5xl mx-auto px-6 pb-16 text-gray-500 text-sm">
-        <p>2025—∞ &nbsp; Built by Hrishikesh Naveenam</p>
-      </footer>
+        {/* Footer */}
+        <footer className="max-w-5xl mx-auto px-6 pb-16 text-gray-500 text-sm">
+          <p>2025—∞ &nbsp; Built by Hrishikesh Naveenam</p>
+        </footer>
+      </div>
     </div>
   );
 }
