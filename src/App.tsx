@@ -12,7 +12,7 @@ function App() {
         {/* Info block with headshot floated right */}
         <div className="relative mb-6">
           <img
-            src="dist/Hrishikesh_N_Headshot.png"
+            src="/Hrishikesh_N_Headshot.png"
             alt="Hrishikesh Naveenam"
             className="float-right ml-6 mb-4 w-28 h-28 rounded-sm object-cover"
           />
