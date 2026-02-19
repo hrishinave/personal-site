@@ -14,7 +14,7 @@ function App() {
           <img
             src="/Hrishikesh_N_Headshot.png"
             alt="Hrishikesh Naveenam"
-            className="float-right ml-6 mb-4 w-28 h-28 rounded-sm object-cover"
+            className="float-right ml-6 mb-4 w-40 h-40 rounded-sm object-cover"
           />
 
           <p>
