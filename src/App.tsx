@@ -5,6 +5,23 @@ function App() {
     <div className="min-h-screen bg-white text-black font-sans">
       <Analytics />
 
+      {/* Nav */}
+      <nav className="sticky top-0 z-10 bg-white/90 backdrop-blur border-b border-gray-200">
+        <div className="max-w-3xl mx-auto px-6 py-3 flex flex-wrap gap-x-5 gap-y-1 text-sm">
+          {[
+            ['About', '#about'],
+            ['Research Interests', '#research-interests'],
+            ['News', '#news'],
+            ['Projects', '#projects'],
+            ['Experience', '#experience'],
+          ].map(([label, href]) => (
+            <a key={href} href={href} className="text-blue-700 hover:underline">
+              {label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       <main className="max-w-3xl mx-auto px-6 py-10 md:py-14 text-[15px] leading-relaxed">
         {/* Name */}
         <h1 className="text-3xl font-bold mb-4">Hrishikesh Naveenam</h1>
@@ -36,7 +53,7 @@ function App() {
               {' | '}
               <a href="https://www.linkedin.com/in/hrishikeshnaveenam/" className="text-blue-700 hover:underline">LinkedIn</a>
               {' | '}
-              <a href="dist/Naveenam_Hrishikesh_CV_Feb26.pdf" className="text-blue-700 hover:underline">CV</a>
+              <a href="/Naveenam_Hrishikesh_CV.pdf" className="text-blue-700 hover:underline">CV</a>
             </li>
           </ul>
         </div>
@@ -44,92 +61,106 @@ function App() {
         <div className="clear-both" />
 
         {/* About Me */}
-        <h2 className="text-xl font-bold mt-8 mb-3">About Me</h2>
+        <h2 id="about" className="text-xl font-bold mt-8 mb-3 scroll-mt-20">About Me</h2>
         <p className="mb-3">
           I am an undergraduate student at the{' '}
           <a href="https://www.utdallas.edu/" className="text-blue-700 hover:underline">University of Texas at Dallas</a>{' '}
-          pursuing a B.S. in Computer Science with a Minor in Mathematics. I am currently a research assistant at the{' '}
-          <a href="https://www.prasadcalyam.com/research" className="text-blue-700 hover:underline">VIMAN Lab</a>{' '}
-          at the{' '}
-          <a href="https://missouri.edu/" className="text-blue-700 hover:underline">University of Missouri</a>,
-          advised by{' '}
-          <a href="https://www.prasadcalyam.com/" className="text-blue-700 hover:underline">Dr. Prasad Calyam</a>,
-          working on confidential computing approaches for ML/DL-based scientific workflows on Volunteer Edge-Cloud resources.
-          I have also fine-tuned bioinformatics models (Evo2, BioMistral7B) and deployed testbeds using OpenFaaS and MicroK8S on AWS.
+          studying Computer Science with a Minor in Mathematics, graduating in May 2028. I am broadly interested in
+          machine learning systems — how models behave once they leave the notebook and have to run reliably on real
+          serving infrastructure.
         </p>
         <p className="mb-3">
-          Previously, I worked as a student researcher with{' '}
-          <a href="https://acmutd.co/" className="text-blue-700 hover:underline">ACM at UT Dallas</a>{' '}
-          on GAN-based augmentation pipelines for astronomical anomaly detection, and with{' '}
-          <a href="https://www.aisutd.org/" className="text-blue-700 hover:underline">AIS at UT Dallas</a>{' '}
-          building ML-powered sports analytics tools.
-          I also lead development at{' '}
-          <a href="#" className="text-blue-700 hover:underline">AI51 Innovation Labs</a>{' '}
-          and serve as an officer at AIS, organizing HackAI — UTD's premier AI hackathon.
+          My research so far spans reproducibility in LLM inference, generative models for anomaly detection, and
+          resource allocation for distributed scientific workflows. Outside of research, I build things with friends and
+          help run the AI community at UTD.
         </p>
 
         {/* Research Interests */}
-        <h2 className="text-xl font-bold mt-8 mb-3">Research Interests</h2>
+        <h2 id="research-interests" className="text-xl font-bold mt-8 mb-3 scroll-mt-20">Research Interests</h2>
         <ul className="list-disc list-inside space-y-1">
-          <li>Confidential Computing &amp; Privacy-Preserving ML</li>
-          <li>Generative Adversarial Networks &amp; Anomaly Detection</li>
-          <li>Volunteer Edge-Cloud Computing &amp; Resource Allocation</li>
-          <li>Bioinformatics &amp; Health Informatics</li>
+          <li>Reproducibility &amp; Non-Determinism in LLM Inference</li>
+          <li>ML Systems: Serving Stacks, Kernels, and Hardware Backends</li>
+          <li>Reliability, Testing, and Evaluation of AI Systems</li>
+          <li>LLM Agents &amp; Multi-Agent Workflows</li>
+          <li>Generative Models &amp; Anomaly Detection</li>
         </ul>
 
         {/* News */}
-        <h2 className="text-xl font-bold mt-8 mb-3">News</h2>
+        <h2 id="news" className="text-xl font-bold mt-8 mb-3 scroll-mt-20">News</h2>
         <ul className="list-disc list-inside space-y-1">
-          <li>Spring 2026: Joined the{' '}
-            <a href="https://www.aisutd.org/" className="text-blue-700 hover:underline">Artificial Intelligence Society</a>{' '}
-            as an Officer, organizing HackAI.
+          <li>Summer 2026: Completed the{' '}
+            <a href="https://ugresearch.utdallas.edu/" className="text-blue-700 hover:underline">
+              Undergraduate Research Assistant Program (URAP)
+            </a>{' '}
+            at UT Dallas under Professor Wei Yang (May–August 2026), studying non-determinism in LLM inference.
           </li>
-          <li>Spring 2026: Joined the AI Mentorship Program (AIM) as Project Manager, mentoring students on TuneTrend.</li>
-          <li>Fall 2025: Won 2nd Place (PNC Track) at HackUTD 2025.</li>
+          <li>Fall 2025: Won 2nd Place (PNC Track) at HackUTD 2025, out of 350+ participants.</li>
           <li>Fall 2025: Joined{' '}
             <a href="#" className="text-blue-700 hover:underline">AI51 Innovation Labs</a>{' '}
             as Lead Developer, building Research Mate — an AI-powered research paper copilot.
+          </li>
+          <li>Fall 2025: Joined AIS's AI Mentorship Program (AIM) as Product Manager, leading the TuneTrend team.</li>
+          <li>Spring 2025: Joined the{' '}
+            <a href="https://www.aisutd.org/" className="text-blue-700 hover:underline">Artificial Intelligence Society</a>{' '}
+            as an Officer, organizing HackAI.
           </li>
           <li>Spring 2025: Completed GAN-based anomaly detection research with{' '}
             <a href="https://acmutd.co/" className="text-blue-700 hover:underline">ACM at UT Dallas</a>{' '}
             — achieved 0.85 ROC-AUC on Galaxy10 dataset.
           </li>
-          <li>Fall 2024: Began research assistantship at the{' '}
-            <a href="https://www.prasadcalyam.com/research" className="text-blue-700 hover:underline">VIMAN Lab</a>,
-            {' '}University of Missouri, on confidential computing for scientific workflows.
-          </li>
           <li>Fall 2024: Dean's List, UT Dallas.</li>
+          <li>Fall 2023: Began research assistantship at the{' '}
+            <a href="https://www.prasadcalyam.com/research" className="text-blue-700 hover:underline">VIMAN Lab</a>,
+            {' '}University of Missouri, on resource allocation for volunteer edge-cloud workflows.
+          </li>
         </ul>
 
         {/* Projects */}
-        <h2 className="text-xl font-bold mt-8 mb-3">Projects</h2>
+        <h2 id="projects" className="text-xl font-bold mt-8 mb-3 scroll-mt-20">Projects</h2>
         <ul className="list-disc list-inside space-y-2">
           <li>
-            <span className="font-medium">AutoPM</span>:
-            {' '}AI-powered PM automation platform orchestrating 8 specialized LangGraph agents for end-to-end workflows including ideation, user stories, RICE prioritization, OKR alignment, and wireframe generation.
-            {' '}Built with Next.js, MongoDB, Auth0, and Gemini 2.0 Flash.
+            <span className="font-medium">AutoPM</span> (November 2025):
+            {' '}AI copilot orchestrating 8 LangGraph agents across a 7-step product workflow — research, user stories,
+            RICE prioritization, wireframing, and Jira tickets — cutting an estimated 10+ hours of manual PM work per
+            cycle. Type-safe agent communication with Zod-validated outputs across Jira, Gmail, and Gemini.
+            {' '}Built with Next.js, TypeScript, and Auth0. <span className="italic">2nd Place out of 350+ at HackUTD.</span>
           </li>
           <li>
-            <span className="font-medium">EduTube</span>:
-            {' '}AI-powered lecture companion integrating TwelveLabs API for semantic video search and Gemini API for auto-generated study materials, processing 100+ educational videos.
-            {' '}Built with React, Fastify, and Google Cloud Storage.
+            <span className="font-medium">OpenWorker</span> (open-source contribution):
+            {' '}Added 4 NVIDIA NIM catalog models to OpenWorker's provider ecosystem behind an OpenAI-compatible
+            interface, first closing an authentication gap that let invalid API keys pass validation.
+            {' '}(<a href="https://github.com/andrewyng/openworker/pull/185" className="text-blue-700 hover:underline">PR #185</a>)
           </li>
           <li>
-            <a href="https://github.com/ShaheemJ/CelestAI" className="text-blue-700 hover:underline font-medium">CelestAI</a>:
-            {' '}AI system using DCGAN, StyleGAN, VQGAN and VAE based augmentation pipeline improving astronomical anomaly-detection metrics.
+            <span className="font-medium">EduTube</span> (September 2025):
+            {' '}AI-powered lecture companion integrating the TwelveLabs API for semantic video search and the Gemini API
+            for auto-generated study materials, processing 100+ educational videos. Fastify backend with webhook-based
+            real-time video processing at 95% uptime, and a React + Vite frontend in a type-safe monorepo.
+          </li>
+          <li>
+            <a href="https://github.com/hrishinave/UTD-Spots" className="text-blue-700 hover:underline font-medium">UTD Spots</a> (May 2025):
+            {' '}iOS app enabling 100+ students to discover campus study locations with amenity filtering and
+            distance-based recommendations via Core Location. MVVM architecture with MapKit for interactive campus
+            visualization.
+            {' '}(<a href="https://github.com/hrishinave/UTD-Spots" className="text-blue-700 hover:underline">GitHub</a>)
+          </li>
+          <li>
+            <a href="https://github.com/Sarvesh30/NetGainNBA" className="text-blue-700 hover:underline font-medium">NetGain NBA</a> (February – May 2025):
+            {' '}Full-stack platform achieving 88% playoff-prediction accuracy on 2020–2024 data with a 7-model ML
+            ensemble across 89 features, plus live win-probability tracking from an NBA Stats API pipeline and K-Means
+            player clustering into 9 archetypes. Interactive GM toolkit with bracket simulation, salary-cap tracking,
+            and a trade engine over 26 datasets.
+            {' '}(<a href="https://net-gain-nba.vercel.app" className="text-blue-700 hover:underline">Live</a>
+            {' | '}
+            <a href="https://github.com/Sarvesh30/NetGainNBA" className="text-blue-700 hover:underline">GitHub</a>)
+          </li>
+          <li>
+            <a href="https://github.com/ShaheemJ/CelestAI" className="text-blue-700 hover:underline font-medium">CelestAI</a> (February – May 2025):
+            {' '}GAN-based augmentation pipeline (DCGAN, StyleGAN, VQGAN, VAE) improving astronomical anomaly-detection
+            metrics to 0.85 ROC-AUC on Galaxy10.
             {' '}(<a href="/celestai-poster.png" className="text-blue-700 hover:underline">Poster</a>
             {' | '}
             <a href="https://github.com/ShaheemJ/CelestAI" className="text-blue-700 hover:underline">GitHub</a>)
-          </li>
-          <li>
-            <a href="https://github.com/Sarvesh30/NetGainNBA" className="text-blue-700 hover:underline font-medium">NetGain NBA</a>:
-            {' '}Interactive simulator generating complete playoff brackets for NBA teams (1995–2024), built with AIS UT Dallas.
-            {' '}(<a href="https://github.com/Sarvesh30/NetGainNBA" className="text-blue-700 hover:underline">GitHub</a>)
-          </li>
-          <li>
-            <a href="https://github.com/hrishinave/UTD-Spots" className="text-blue-700 hover:underline font-medium">UTD Spots</a>:
-            {' '}iOS app helping UT Dallas students discover and share study locations.
-            {' '}(<a href="https://github.com/hrishinave/UTD-Spots" className="text-blue-700 hover:underline">GitHub</a>)
           </li>
           <li>
             <a href="https://github.com/hrishinave/email-agent" className="text-blue-700 hover:underline font-medium">Cold Email Agent</a>:
@@ -139,27 +170,56 @@ function App() {
         </ul>
 
         {/* Experience */}
-        <h2 className="text-xl font-bold mt-8 mb-3">Experience</h2>
+        <h2 id="experience" className="text-xl font-bold mt-8 mb-3 scroll-mt-20">Experience</h2>
         <ul className="list-disc list-inside space-y-2">
           <li>
-            <span className="font-medium">Research Assistant — VIMAN Lab, Univ. of Missouri</span> (Fall 2024 – Spring 2025)<br />
-            <span className="ml-5 inline-block">Confidential computing for ML/DL scientific workflows on Volunteer Edge-Cloud resources. Fine-tuned Evo2 and BioMistral7B bioinformatics models on AWS EC2.</span>
+            <span className="font-medium">Undergraduate Research Assistant — URAP, UT Dallas</span> (May – August 2026)<br />
+            <span className="ml-5 inline-block">
+              Advised by Professor Wei Yang. Investigated root causes of non-determinism in LLM inference across serving
+              stacks, kernel implementations, and hardware backends. Curated a dataset of 200+ documented root causes,
+              developed a taxonomy of recurring failure modes, and built Python harnesses to isolate and replay divergent
+              inference runs.
+            </span>
           </li>
           <li>
-            <span className="font-medium">Student Researcher — ACM, UT Dallas</span> (Spring 2025)<br />
-            <span className="ml-5 inline-block">Developed DCGAN and StyleGAN architectures for astronomical anomaly detection, achieving 0.85 ROC-AUC on Galaxy10.</span>
+            <span className="font-medium">Lead Developer — AI51 Innovation Labs</span> (August 2025 – Present)<br />
+            <span className="ml-5 inline-block">
+              Leading development of Research Mate, an AI-powered research paper copilot with section-wise summarization,
+              citation-aware explanations with source attribution, and interactive citation graph visualization.
+            </span>
           </li>
           <li>
-            <span className="font-medium">Research Assistant — VIMAN Lab, Univ. of Missouri</span> (Fall 2023 – Spring 2024)<br />
-            <span className="ml-5 inline-block">Implemented K-means clustering for volunteer edge node resource allocation, achieving 84% placement accuracy. Built Docker-based AWS testbed.</span>
+            <span className="font-medium">
+              Product Manager — AI Mentorship Program (AIM),{' '}
+              <a href="https://www.aisutd.org/" className="text-blue-700 hover:underline">AIS</a> at UT Dallas
+            </span> (August 2025 – Present)<br />
+            <span className="ml-5 inline-block">
+              Directing a 4–5 person engineering team building TuneTrend, a genre-aware music popularity predictor with an
+              ML pipeline extracting 140+ audio features across 6 genre models.
+            </span>
           </li>
           <li>
-            <span className="font-medium">Lead Developer — AI51 Innovation Labs</span> (Fall 2025 – Present)<br />
-            <span className="ml-5 inline-block">Leading development of Research Mate, an AI-powered research paper copilot with citation graph visualization and cross-domain paper discovery.</span>
+            <span className="font-medium">Officer — Artificial Intelligence Society (AIS), UT Dallas</span> (May 2025 – Present)<br />
+            <span className="ml-5 inline-block">
+              Organizing HackAI, UTD's premier annual AI hackathon, for hundreds of participants. Facilitating technical
+              workshops and community initiatives promoting AI literacy.
+            </span>
           </li>
           <li>
-            <span className="font-medium">Officer — Artificial Intelligence Society (AIS), UT Dallas</span> (Spring 2026 – Present)<br />
-            <span className="ml-5 inline-block">Organizing HackAI, UTD's premier annual AI hackathon. Facilitating workshops and community initiatives.</span>
+            <span className="font-medium">Student Researcher — UT Dallas</span> (February – May 2025)<br />
+            <span className="ml-5 inline-block">
+              Designed and trained a DCGAN in PyTorch for astronomical anomaly detection, reaching 0.85 ROC-AUC and 0.72
+              recall on Galaxy10. Fine-tuned StyleGAN weights to 0.81 ROC-AUC on rare celestial events, improving
+              rare-event detection 15% over baseline.
+            </span>
+          </li>
+          <li>
+            <span className="font-medium">Research Assistant — VIMAN Lab, Univ. of Missouri</span> (September 2023 – January 2024)<br />
+            <span className="ml-5 inline-block">
+              Achieved 84% workflow-placement accuracy across volunteer edge nodes using K-Means clustering over CPU, RAM,
+              and storage telemetry. Architected a Docker-based AWS EC2 testbed for repeatable testing across
+              heterogeneous edge infrastructure.
+            </span>
           </li>
         </ul>
 
