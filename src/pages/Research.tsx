@@ -1,16 +1,5 @@
-function Research() {
-  return (
-    <>
-      <h2 className="text-xl font-bold mt-8 mb-3">Research Interests</h2>
-      <ul className="list-disc list-inside space-y-1">
-        <li>Reproducibility &amp; Non-Determinism in LLM Inference</li>
-        <li>ML Systems: Serving Stacks, Kernels, and Hardware Backends</li>
-        <li>Reliability, Testing, and Evaluation of AI Systems</li>
-        <li>LLM Agents &amp; Multi-Agent Workflows</li>
-        <li>Generative Models &amp; Anomaly Detection</li>
-      </ul>
-    </>
-  );
+import { PageHeading, PortfolioEntry } from '../components/PortfolioEntry';
+import cv from '../data/cv.json';
+export default function Research() {
+  return <><PageHeading number="01" title="Research">My research spans reproducibility in LLM inference, generative models for anomaly detection, and resource allocation for distributed workflows.</PageHeading><div className="page-content"><div className="research-topics" aria-label="Research interests"><span>ML systems</span><span>Reproducibility</span><span>Reliability & evaluation</span><span>Generative models</span><span>Distributed computing</span></div>{cv.research.map((item,index) => <PortfolioEntry key={item.id} item={item} index={index} />)}</div></>;
 }
-
-export default Research;
